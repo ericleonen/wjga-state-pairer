@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>WJGA State Championship Pairer</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="contentContainer">
+      <h1 id="title">WJGA State Championship Pairer</h1>
+      <details id="instructionsContainer">
+        <summary>How do I use this?</summary>
+        <ol>
+          <li>Create a spreadsheet with the following columns:
+            <table style="margin-top: 1rem"">
+              <tr>
+                <th>Column</th>
+                <th>Description</th>
+                <th>Possible values</th>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>The player's name</td>
+                <td>Any name</td>
+              </tr>
+              <tr>
+                <td>District</td>
+                <td>The player's district</td>
+                <td>Numbers from 1 to 6</td>
+              </tr>
+              <tr>
+                <td>Ranking</td>
+                <td>The player's place at their Districts Championship. Give players who tied the same ranking. Give exempt players a ranking of 0</td>
+                <td>Numbers greater than or equal to 0</td>
+              </tr>
+              <tr>
+                <td>Division (optional)</td>
+                <td>The player gender/age division. If all players in the spreadsheet are in the same division, omit this column</td>
+                <td>Boys 8-11, Boys 12-13, Boys 14-15, Boys 16-18, Girls 8-11, Girls 12-13, Girls 14-15, or Girls 16-18</td>
+              </tr>
+            </table>
+            <div style="margin-top: 1rem">
+              <em>Examples:</em>
+              <a href="https://docs.google.com/spreadsheets/d/10JzCKLvuoLiYmwXq-KA0V4hqjU6DqaVy266qD95CH_s/edit?gid=752979004#gid=752979004">Spreadsheet with Division column</a>
+              <a href="https://docs.google.com/spreadsheets/d/10JzCKLvuoLiYmwXq-KA0V4hqjU6DqaVy266qD95CH_s/edit?gid=1943456917#gid=1943456917">Spreadsheet without Division column</a>
+            </div>
+          </li>
+          <li>Download the spreadsheet as a <em>.csv</em> file.</li>
+          <li>Upload that <em>.csv</em> file with the file picker below and hit <em>Generate pairings</em>.</li>
+        </ol>
+      </details>
+      <div id="inputContainer">
+        <div id="filePickerContainer">
+          <label for="filePicker" id="filePickerButton">
+            <svg style="height: 1.5rem; margin-right: 0.5rem; margin-top: -2px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+              <path d="M7.25 10.25a.75.75 0 0 0 1.5 0V4.56l2.22 2.22a.75.75 0 1 0 1.06-1.06l-3.5-3.5a.75.75 0 0 0-1.06 0l-3.5 3.5a.75.75 0 0 0 1.06 1.06l2.22-2.22v5.69Z" />
+              <path d="M3.5 9.75a.75.75 0 0 0-1.5 0v1.5A2.75 2.75 0 0 0 4.75 14h6.5A2.75 2.75 0 0 0 14 11.25v-1.5a.75.75 0 0 0-1.5 0v1.5c0 .69-.56 1.25-1.25 1.25h-6.5c-.69 0-1.25-.56-1.25-1.25v-1.5Z" />
+            </svg> 
+            Upload a file
+          </label>
+          <input type="file" id="filePicker" />
+          <p id="selectedFileDisplay">No file selected</p>
+        </div>
+        <button id="generateButton" disabled>Generate pairings</button>
+      </div>
+      <div id="pairingsContainer"></div>
+    </div>
+  </body>
+</html>
