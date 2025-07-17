@@ -1,4 +1,4 @@
-import makePairingsFromText from "https://cdn.jsdelivr.net/npm/wjga-state-pairer@1.0.5/bundle.js";
+import makePairingsFromText from "https://cdn.jsdelivr.net/npm/wjga-state-pairer@1.0.7/bundle.js";
 
 window.addEventListener("load", () => {
     const filePicker = document.getElementById("filePicker");
